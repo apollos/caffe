@@ -1,0 +1,23 @@
+#0  0x00003fffb75299b8 in ATL_sJIK0x0x80TN80x80x0_a1_bX () from /home/yu/workspace/caffe/.build_debug/tools/../lib/libcaffe.so
+#1  0x00003fffb74b3e7c in ATL_sgpKBmm () from /home/yu/workspace/caffe/.build_debug/tools/../lib/libcaffe.so
+#2  0x00003fffb74a601c in ATL_spKBmm () from /home/yu/workspace/caffe/.build_debug/tools/../lib/libcaffe.so
+#3  0x00003fffb74b45c4 in ATL_sIBJBmm () from /home/yu/workspace/caffe/.build_debug/tools/../lib/libcaffe.so
+#4  0x00003fffb741c684 in ATL_smmIJK2 () from /home/yu/workspace/caffe/.build_debug/tools/../lib/libcaffe.so
+#5  0x00003fffb741ce08 in ATL_smmIJK () from /home/yu/workspace/caffe/.build_debug/tools/../lib/libcaffe.so
+#6  0x00003fffb7416b9c in ATL_sgemm () from /home/yu/workspace/caffe/.build_debug/tools/../lib/libcaffe.so
+#7  0x00003fffb740a35c in cblas_sgemm () from /home/yu/workspace/caffe/.build_debug/tools/../lib/libcaffe.so
+#8  0x00003fffb71e72bc in caffe::caffe_cpu_gemm<float> (TransA=CblasNoTrans, TransB=CblasNoTrans, M=50, N=64, K=500, alpha=1, A=0x1442daf0, B=0x14942c50, beta=0, 
+    C=0x1480a440) at src/caffe/util/math_functions.cpp:20
+#9  0x00003fffb7317624 in caffe::BaseConvolutionLayer<float>::forward_cpu_gemm (this=0x14548600, input=0x145d7c20, weights=0x1442daf0, output=0x1480a440, 
+    skip_im2col=false) at src/caffe/layers/base_conv_layer.cpp:253
+#10 0x00003fffb72f2e44 in caffe::ConvolutionLayer<float>::Forward_cpu (this=0x14548600, bottom=..., top=...) at src/caffe/layers/conv_layer.cpp:30
+#11 0x000000001001df2c in caffe::Layer<float>::Forward (this=0x14548600, bottom=..., top=...) at ./include/caffe/layer.hpp:459
+#12 0x00003fffb7380d80 in caffe::Net<float>::ForwardFromTo (this=0x140a7700, start=0, end=11) at src/caffe/net.cpp:576
+#13 0x00003fffb7380a2c in caffe::Net<float>::ForwardPrefilled (this=0x140a7700, loss=0x3fffffffedd8) at src/caffe/net.cpp:596
+#14 0x00003fffb7381018 in caffe::Net<float>::Forward (this=0x140a7700, bottom=..., loss=0x3fffffffedd8) at src/caffe/net.cpp:610
+#15 0x00003fffb736f144 in caffe::Solver<float>::Test (this=0x140b2560, test_net_id=0) at src/caffe/solver.cpp:367
+#16 0x00003fffb736ed88 in caffe::Solver<float>::TestAll (this=0x140b2560) at src/caffe/solver.cpp:333
+#17 0x00003fffb736d15c in caffe::Solver<float>::Step (this=0x140b2560, iters=10000) at src/caffe/solver.cpp:207
+#18 0x00003fffb736cad4 in caffe::Solver<float>::Solve (this=0x140b2560, resume_file=0x0) at src/caffe/solver.cpp:300
+#19 0x00000000100163a4 in train () at tools/caffe.cpp:213
+#20 0x0000000010018c34 in main (argc=2, argv=0x3ffffffffaf0) at tools/caffe.cpp:395
